@@ -19,7 +19,7 @@ starts.
 4. The vending machine is automatically restocked each time the application runs.
 5. When the customer selects "(1) Display Vending Machine Items", they're presented
 with a list of all items in the vending machine with its quantity remaining:
-    - Each vending machine product has a slot identifier and a purchase price.
+    - Each vending machine product has a slot identifier and a purchase itemPrice.
     - Each slot in the vending machine has enough room for 5 of that product.
     - Every product is initially stocked to the maximum amount.
     - A product that has run out must indicate that it's SOLD OUT.
@@ -90,7 +90,7 @@ The input file that stocks the vending machine products is a pipe `|` delimited 
 ----------------|-------------|
 | Slot Location | The slot location in the vending machine containing the product.   |
 | Product Name  | The display name of the vending machine product.                   |
-| Price         | The purchase price for the product.                                |
+| Price         | The purchase itemPrice for the product.                                |
 | Type          | The product type for this row.                                     |
 
 For example:
