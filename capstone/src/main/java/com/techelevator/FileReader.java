@@ -3,9 +3,7 @@ package com.techelevator;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class FileReader {
 
@@ -32,6 +30,19 @@ public class FileReader {
             e.getMessage();
         }
 
+        return inventoryList;
+    }
+
+    public Map<Item, Integer> stockMap (List<Item> inventoryList) {
+        int initialFullStockAmount = 5;
+        Map<Item, Integer> stockAmount = new HashMap<>();
+        for (Item item : getInventoryList()) {
+            stockAmount.put(item, initialFullStockAmount);
+        }
+        return stockAmount;
+    }
+
+    public List<Item> getInventoryList() {
         return inventoryList;
     }
 

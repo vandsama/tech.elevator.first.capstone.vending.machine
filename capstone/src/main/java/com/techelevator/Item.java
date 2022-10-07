@@ -38,7 +38,7 @@ public class Item {
 
     public String toString() {
 
-        return String.format("||  %s | %s | %s | %s  ||", this.getItemLocation(), this.getItemName(), this.getItemPrice(), this.getItemType());
+        return String.format("|| %s | %s | %s | %s  ||", this.getItemLocation(), this.getItemName(), this.getItemPrice(), this.getItemType());
     }
 
 
