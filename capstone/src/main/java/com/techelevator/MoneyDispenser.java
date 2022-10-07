@@ -1,11 +1,15 @@
 package com.techelevator;
 
+import javax.annotation.processing.Filer;
+import javax.swing.*;
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MoneyDispenser {
 
-    private BigDecimal balance = BigDecimal.ZERO;
-    private BigDecimal amountToDeposit;
+    BigDecimal balance = BigDecimal.ZERO;
+    BigDecimal amountToDeposit;
     BigDecimal amountToCharge;
     BigDecimal changeDue;
 
@@ -17,14 +21,23 @@ public class MoneyDispenser {
     }
 
 
-    public BigDecimal deposit(BigDecimal amountToDeposit) {
+    public BigDecimal feedMoney(BigDecimal amountToDeposit) {
         balance.add(amountToDeposit);
         return balance;
     }
 
     public BigDecimal charge(BigDecimal amountToCharge) {
-
         changeDue = balance.subtract(amountToCharge);
         return balance;
     }
+
+    public String toString() {
+        return String.format("%s", this.getBalance());
+    }
+
+//    FileReader priceLocation = new FileReader();
+//    Map<String, BigDecimal> priceLocationMap = priceLocation.getLocationPriceMap();
+//    amountToCharge = priceLocation.getLocationPriceMap();
+
 }
+

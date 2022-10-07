@@ -11,12 +11,9 @@ public class VendingMachineCLI {
 	}
 
 	public void run() {
-		FileReader displayInventory = new FileReader();
-		List<Item> items = displayInventory.processFile();
+		UserInterface ui = new UserInterface();
+		ui.mainMenu();
 
-		for(Item item: items) {
-			System.out.println(item);
-		}
 	}
 
 	public static void main(String[] args) {

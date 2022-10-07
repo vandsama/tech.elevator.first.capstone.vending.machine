@@ -42,11 +42,31 @@ public class FileReader {
         return stockAmount;
     }
 
+    public Map<String, BigDecimal> getLocationPriceMap (List<Item> inventoryList) {
+        String location = "";
+        BigDecimal price;
+        Map<String, BigDecimal> priceLocationMap = new HashMap<>();
+        for (Item item : getInventoryList()) {
+             location = item.getItemLocation();
+             price = item.getItemPrice();
+            priceLocationMap.put(location,price);
+        }
+        return priceLocationMap;
+
+    }
+
     public List<Item> getInventoryList() {
         return inventoryList;
     }
 
+    public void printMapDetails() {
+        Map<String, BigDecimal> newMap = new HashMap<>();
+        newMap = getLocationPriceMap(inventoryList);
+        for (Map.Entry<String, BigDecimal> stuff : newMap.entrySet()) {
+            System.out.println(stuff.getKey() + " "  + stuff.getValue() + "\n");
+        }
 
+    }
 
 }
 
